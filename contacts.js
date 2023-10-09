@@ -42,13 +42,11 @@ const addContact = async (name, email, phone) => {
   if (
     contacts.some(
       ({ name: userName, email: userEmail, phone: userPhone }) =>
-        userName === name ||
-        userPhone === phone ||
-        userEmail === email ||
-        !name ||
-        !email ||
-        !phone
-    )
+        userName === name || userPhone === phone || userEmail === email
+    ) ||
+    !name ||
+    !email ||
+    !phone
   ) {
     return null;
   }
